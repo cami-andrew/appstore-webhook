@@ -30,7 +30,7 @@ function buildSlackMessage(payload) {
           type: "header",
           text: {
             type: "plain_text",
-            text: "🚀 App Version Status Updated",
+            text: "🚀 앱의 상태가 변경되었습니다.",
             emoji: true,
           },
         },
@@ -39,11 +39,11 @@ function buildSlackMessage(payload) {
           fields: [
             {
               type: "mrkdwn",
-              text: `*${getStatusEmoji(newValue)} Current Status:*\n${getAppStoreStatusLabel(newValue)}`,
+              text: `*${getStatusEmoji(newValue)} 현재 상태:*\n${getAppStoreStatusLabel(newValue)}`,
             },
             {
               type: "mrkdwn",
-              text: `*Previous Status:*\n${getAppStoreStatusLabel(oldValue)}`,
+              text: `*이전 상태:*\n${getAppStoreStatusLabel(oldValue)}`,
             },
             {
               type: "mrkdwn",
@@ -62,7 +62,7 @@ function buildSlackMessage(payload) {
           type: "section",
           text: {
             type: "mrkdwn",
-            text: `<${APP_STORE_URL}|🔗 View on App Store>`,
+            text: `<${APP_STORE_URL}|🔗 App Store에서 보기>`,
           },
         });
       }
@@ -76,7 +76,7 @@ function buildSlackMessage(payload) {
           type: "header",
           text: {
             type: "plain_text",
-            text: "🔄 Webhook Test Ping",
+            text: "🔄 웹훅 핑 테스트",
             emoji: true,
           },
         },
@@ -114,7 +114,7 @@ function buildSlackMessage(payload) {
         const webLink = `https://appstoreconnect.apple.com/apps/${adamId}/testflight/screenshots/${feedbackId}`;
         elements.push({
           type: "mrkdwn",
-          text: `🌐 <${webLink}|View in App Store Connect>`,
+          text: `🌐 <${webLink}|App Store Connect에서 보기>`,
         });
       }
 
@@ -122,7 +122,7 @@ function buildSlackMessage(payload) {
         const xcodeLink = `xcode://organizer/feedback/downloadFeedback?adamId=${adamId}&feedbackId=${feedbackId}&bundleId=${bundleId}&platformId=${platformId}&userAgent=appStoreConnect`;
         elements.push({
           type: "mrkdwn",
-          text: `💻 <${xcodeLink}|Open in Xcode Organizer>`,
+          text: `💻 <${xcodeLink}|Xcode Organizer에서 보기>`,
         });
       }
 
@@ -131,7 +131,7 @@ function buildSlackMessage(payload) {
           type: "header",
           text: {
             type: "plain_text",
-            text: "🧪 TestFlight Feedback Screenshot Submitted",
+            text: "🧪 TestFlight 피드백 스크린샷이 제출되었습니다",
             emoji: true,
           },
         },
@@ -173,7 +173,7 @@ function buildSlackMessage(payload) {
         const webLink = `https://appstoreconnect.apple.com/apps/${adamId}/testflight/crashes/${crashId}`;
         elements.push({
           type: "mrkdwn",
-          text: `🌐 <${webLink}|View in App Store Connect>`,
+          text: `🌐 <${webLink}|App Store Connect에서 보기>`,
         });
       }
 
@@ -182,7 +182,7 @@ function buildSlackMessage(payload) {
           type: "header",
           text: {
             type: "plain_text",
-            text: "🐞 TestFlight Crash Feedback Submitted",
+            text: "🐞 TestFlight 크래시 피드백 제출되었습니다.",
             emoji: true,
           },
         },
@@ -218,7 +218,7 @@ function buildSlackMessage(payload) {
         type: "header",
         text: {
           type: "plain_text",
-          text: `📬 Unhandled App Store Event: ${type}`,
+          text: `📬 처리되지 않은 App Store 이벤트: ${type}`,
           emoji: true,
         },
       },
